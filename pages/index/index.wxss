@@ -1,0 +1,4 @@
+/**index.wxss**/
+.shop_index{
+  color: var(--themeColor);
+}

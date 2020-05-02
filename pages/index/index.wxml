@@ -1,0 +1,9 @@
+<!-- index.wxml -->
+<view>
+	<!-- 搜索栏 -->
+	<SearchInput />
+
+	<!-- 轮播图 -->
+	<Swiper />
+</view>
+	

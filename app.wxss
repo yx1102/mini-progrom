@@ -1,0 +1,15 @@
+/**app.wxss**/
+/* 引入的iconfont */
+@import './styles/iconfont.wxss';
+/* 重置样式 */
+@import './styles/reset.wxss';
+
+
+
+page{
+  /* 主题颜色 */
+  --themeColor: #02a774;
+  /* 文字颜色 */
+  --themeFontColor: #333333;
+}
+
