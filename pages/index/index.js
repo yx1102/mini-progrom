@@ -1,40 +1,43 @@
-//index.js
+import {reqSwiper, reqNavData, reqHomeFloor} from '../../api/index.js'
+import {getRequest} from '../../api/ajax'
 //获取应用实例
 //Page Object
 Page({
   data: {
-    
+    swiperData: [],
+    navData: [],
+    floorData: []
   },
   //options(Object)
   onLoad: function(options){
+    this.getSwiperData()
+    this.getNavData()
+    this.getFloorData()
+  },
+
+  // 请求轮播图数据
+  async getSwiperData(){
+    const result = await getRequest(reqSwiper)
+    this.setData({
+      swiperData: result
+    })
+  },
+
+  // 请求导航数据
+  async getNavData(){
+    const result = await getRequest(reqNavData)
+    this.setData({
+      navData: result
+    })
+  },
+
+  // 请求楼层数据
+  async getFloorData(){
+    const result = await getRequest(reqHomeFloor)
+    console.log(result);
     
-  },
-  onReady: function(){
-    
-  },
-  onShow: function(){
-    
-  },
-  onHide: function(){
-
-  },
-  onUnload: function(){
-
-  },
-  onPullDownRefresh: function(){
-
-  },
-  onReachBottom: function(){
-
-  },
-  onShareAppMessage: function(){
-
-  },
-  onPageScroll: function(){
-
-  },
-  //item(index,pagePath,text)
-  onTabItemTap:function(item){
-
+    this.setData({
+      floorData: result
+    })
   }
 });

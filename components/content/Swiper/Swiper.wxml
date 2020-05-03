@@ -1,0 +1,10 @@
+<!-- components/content/Swiper/Swiper.wxml -->
+<view class="swiper_container">
+  <swiper indicator-dots autoplay circular="{{true}}">
+    <swiper-item wx:for="{{swiperData}}" wx:key="goods_id">
+      <navigator url="{{item.navigator_url}}" open-type='switchTab'>
+        <image src="{{item.image_src}}" mode="widthFix" />
+      </navigator>
+    </swiper-item>
+  </swiper>
+</view>
