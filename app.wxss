@@ -13,3 +13,7 @@ page{
   --themeFontColor: #333333;
 }
 
+image{
+  width: 100%;
+}
+

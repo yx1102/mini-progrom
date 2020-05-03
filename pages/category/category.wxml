@@ -1,2 +1,32 @@
-<!--pages/category/category.wxml-->
-<text>pages/category/category.wxml</text>
+<!-- pages/category/category.wxml -->
+<view class="category">
+  <SearchInput />
+  <view class="cate_container">
+
+    <!-- 左侧滚动栏 -->
+    <scroll-view scroll-y class="cate_left">
+      <view wx:for="{{leftMenu}}" wx:key="*this" class="menu_item {{index===currentIndex?'active':''}}" bindtap="handelItemTap" data-index="{{index}}">
+        {{item}}
+      </view>
+    </scroll-view>
+
+    <!-- 右侧滚动栏 -->
+    <scroll-view scroll-y class="cate_right" scroll-top="{{scrollTop}}">
+      <view class="content" wx:for="{{rightMenu}}" wx:key="cat_id" scroll-top="{{scrollTop}}">
+        <view class="title">
+          <text class="delimit">/</text>
+          <text>{{item.cat_name}}</text>
+          <text class="delimit">/</text>
+        </view>
+        <view class="cate_list">
+          <navigator class="list_item" wx:for="{{item.children}}" wx:for-item="item1" wx:key="cat_name" url="/pages/goods_list/goods_list?cid={{item1.cat_id}}" open-type="navigate">
+            <image mode="widthFix" src="{{item1.cat_icon}}" />
+            <view class="right_text">
+              {{item1.cat_name}}
+            </view>
+          </navigator>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</view>
