@@ -24,7 +24,8 @@
 			"outputPath": ""
 		},
 		"useCompilerModule": true,
-		"userConfirmedUseCompilerModuleSwitch": false
+		"userConfirmedUseCompilerModuleSwitch": false,
+		"nodeModules": true
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.11.0",
@@ -63,8 +64,8 @@
 				{
 					"id": 0,
 					"name": "商品详情",
-					"pathName": "pages/goods_list/goods_list",
-					"query": "cid=5",
+					"pathName": "pages/goods_detail/goods_detail",
+					"query": "goods_id=43986",
 					"scene": null
 				}
 			]

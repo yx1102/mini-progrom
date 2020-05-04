@@ -1,6 +1,6 @@
 // 同时请求多个接口的次数
 let ajaxTimes = 0
-export const requset = function (params) {
+export const request = function (params) {
   return new Promise((resolve,reject)=>{
     // 显示loading
     wx.showLoading({

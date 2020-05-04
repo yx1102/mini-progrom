@@ -1,4 +1,4 @@
-import {requset} from '../../api/request'
+import {request} from '../../api/request'
 Page({
 
   /**
@@ -63,7 +63,7 @@ Page({
 
   // 获取商品详情数据
   async getSearchGoodsList(){
-    const result = await requset({url: '/goods/search', data:this.queryInfo})
+    const result = await request({url: '/goods/search', data:this.queryInfo})
     
     // 总页数
     this.totalPage = Math.ceil(result.total / this.queryInfo.pagesize)

@@ -1,1 +1,97 @@
-/* pages/goods_detail/goods_detail.wxss */
+page {
+  padding-bottom: 90rpx;
+}
+.goods_detail swiper {
+  width: 100%;
+  height: 65vw;
+  text-align: center;
+}
+.goods_detail swiper image {
+  width: 65%;
+}
+.goods_detail .good_info {
+  padding: 15rpx;
+  font-size: 28rpx;
+  color: #666;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+.goods_detail .good_info .good_price {
+  color: var(--themeColor);
+  font-weight: bolder;
+  font-size: 32rpx;
+}
+.goods_detail .good_info .good_desc {
+  display: flex;
+}
+.goods_detail .good_info .good_desc .good_title {
+  flex: 5;
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.goods_detail .good_info .good_desc .good_fav {
+  border-left: 2px solid #ccc;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.goods_detail .good_detail .text {
+  margin: 30rpx;
+  color: var(--themeColor);
+  font-weight: bolder;
+  font-size: 36rpx;
+  border-bottom: 2px solid #ccc;
+}
+.goods_detail .tool_bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  background-color: #fff;
+  text-align: center;
+  align-items: center;
+  font-size: 28rpx;
+  height: 90rpx;
+}
+.goods_detail .tool_bar .tool_item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 28rpx;
+  position: relative;
+}
+.goods_detail .tool_bar .tool_item button {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+.goods_detail .tool_bar .addcart {
+  flex: 2;
+  height: 100%;
+  background-color: #ffa500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+.goods_detail .tool_bar .buy {
+  flex: 2;
+  height: 100%;
+  background-color: var(--themeColor);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
