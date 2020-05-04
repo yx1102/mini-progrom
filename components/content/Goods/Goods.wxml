@@ -1,0 +1,13 @@
+<view class="goods">
+  <view class="goods_content" wx:for="{{goosList}}" wx:key="goods_id">
+    <!-- 左侧 -->
+    <view class="goods_left">
+      <image src="{{item.goods_small_logo ? item.goods_small_logo:'https://ww1.sinaimg.cn/large/007rAy9hgy1g24by9t530j30i20i2glm.jpg'}}" mode="widthFix"></image>
+    </view>
+    <!-- 右侧 -->
+    <view class="goods_right">
+      <view class="goods_desc">{{item.goods_name}}</view>
+      <view class="goods_price">￥{{item.goods_price}}</view>
+    </view>
+  </view>
+</view>

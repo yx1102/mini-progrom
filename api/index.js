@@ -9,3 +9,12 @@ export const reqHomeFloor = '/home/floordata'
 
 // 请求分类数据
 export const reqCateData = '/categories'
+
+// 请求商品详情
+export const reqGoodsDetail = '/goods/detail'
+
+// 请求商品列表搜索、
+export const reqSearchGoodsList = '/goods/search'
+
+// 请求商品搜索
+export const reqSearchGoods = '/goods/qsearch'

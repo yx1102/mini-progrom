@@ -1,2 +1,12 @@
-<!--pages/goods_list/goods_list.wxml-->
-<text>pages/goods_list/goods_list.wxml</text>
+<view class="goods_list">
+  <!-- 搜索栏 -->
+  <SearchInput />
+  <!-- tabs栏 -->
+  <Tabs tabs="{{tabs}}" bindhandelItemTap="handelItemTap">
+    <view class="content_item" wx:if="{{tabs[0].isActive}}">
+      <Goods goosList="{{goosList}}"/>
+    </view>
+    <view class="content_item" wx:elif="{{tabs[1].isActive}}">1</view>
+    <view class="content_item" wx:else>2</view>
+  </Tabs>
+</view>
