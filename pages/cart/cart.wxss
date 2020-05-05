@@ -1,1 +1,148 @@
-/* pages/cart/cart.wxss */
+.cart .receive_address {
+  display: flex;
+  flex: 1;
+  margin-top: 20rpx;
+}
+.cart .addressInfo {
+  padding: 10rpx;
+  display: flex;
+  font-size: 26rpx;
+}
+.cart .addressInfo .info {
+  flex: 3;
+}
+.cart .addressInfo .info .username {
+  margin-bottom: 10rpx;
+}
+.cart .addressInfo .phone {
+  flex: 1;
+}
+.cart .cart_list {
+  margin-top: 10rpx;
+}
+.cart .cart_list .cart_text {
+  font-size: 34rpx;
+  color: var(--themeColor);
+  border-top: 1px solid var(--themeColor);
+  border-bottom: 1px solid var(--themeColor);
+  font-weight: bolder;
+  padding: 20rpx;
+}
+.cart .cart_list .good_item {
+  padding: 10rpx 20rpx;
+  font-size: 28rpx;
+  color: #666;
+}
+.cart .cart_list .good_item .good_shop {
+  margin-bottom: 20rpx;
+}
+.cart .cart_list .good_item .good_content {
+  padding: 20rpx 0;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+}
+.cart .cart_list .good_item .good_content .content_left {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cart .cart_list .good_item .good_content .content_left checkbox {
+  flex: 1;
+}
+.cart .cart_list .good_item .good_content .content_left navigator {
+  flex: 7;
+}
+.cart .cart_list .good_item .good_content .content_left navigator image {
+  width: 80%;
+}
+.cart .cart_list .good_item .good_content .good_info {
+  flex: 4;
+}
+.cart .cart_list .good_item .good_content .good_info .good_title {
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
+}
+.cart .cart_list .good_item .good_content .good_info .good_wrap {
+  display: flex;
+  margin-top: 30rpx;
+}
+.cart .cart_list .good_item .good_content .good_info .good_wrap .good_price {
+  flex: 1;
+  color: var(--themeColor);
+  font-weight: bolder;
+  font-size: 36rpx;
+}
+.cart .cart_list .good_item .good_content .good_info .good_wrap .good_num {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cart .cart_list .good_item .good_content .good_info .good_wrap .good_num .good_sub,
+.cart .cart_list .good_item .good_content .good_info .good_wrap .good_num .good_add {
+  border: 1px solid #ccc;
+  padding: 0;
+  margin: 0;
+  width: 50rpx;
+  color: #999;
+}
+.cart .cart_list .good_item .good_content .good_info .good_wrap .good_num .good_count {
+  padding: 0 20rpx;
+}
+.cart .cal_total {
+  font-size: 26rpx;
+  color: #666;
+  box-sizing: border-box;
+  padding: 0 0 0 20rpx;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  height: 90rpx;
+  display: flex;
+  width: 100%;
+}
+.cart .cal_total .total_left {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cart .cal_total .total_left checkbox {
+  flex: 1;
+}
+.cart .cal_total .total_left .selectAll {
+  flex: 4;
+}
+.cart .cal_total .cart_total {
+  flex: 4;
+  display: flex;
+  text-align: right;
+  padding-right: 10rpx;
+}
+.cart .cal_total .cart_total .cart_price {
+  flex: 1;
+}
+.cart .cal_total .cart_total .cart_price .total {
+  color: var(--themeColor);
+  font-weight: bolder;
+  font-size: 32rpx;
+}
+.cart .cal_total .cart_total .cart_price .cart_free {
+  font-size: 24rpx;
+}
+.cart .cal_total .cal_btn {
+  flex: 2;
+  background-color: var(--themeColor);
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 34rpx;
+}

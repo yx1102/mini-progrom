@@ -59,6 +59,7 @@ Page({
     // 4 不存在于购物车的数组中 直接给购物车数组添加一个新元素 新元素 带上 购买数量属性 num  重新把购物车数组 填充回缓存中
     if(index===-1){
       this.goodsObj.num = 1
+      this.goodsObj.checked = true
       cartList.push(this.goodsObj)
       
     }else{// 5 已经存在 修改商品数据  执行购物车数量++ 重新把购物车数组 填充回缓存中
