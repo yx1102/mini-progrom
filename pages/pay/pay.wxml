@@ -1,2 +1,53 @@
-<!--pages/pay/pay.wxml-->
-<text>pages/pay/pay.wxml</text>
+<view class="cart">
+  <!-- 顶部收货定制 -->
+  <button class="receive_address" type="primary" plain="{{true}}" bindtap="getUserAddress" wx:if="{{!address}}">+ 添加收货地址</button>
+  <view class="addressInfo" wx:else>
+    <view class="info">
+      <view class="username">{{address.userName}}</view>
+      <view class="address">{{address.provinceName + address.cityName + address.countyName + address.detailInfo}}</view>
+    </view>
+    <view class="phone">{{address.telNumber}}</view>
+  </view>
+
+
+  <!-- 商品列表 -->
+  <view class="cart_list">
+    <view class="cart_text">购物车</view>
+    <view class="good_item">
+      <view class="good_content" wx:for="{{cartList}}" wx:key="goods_small_logo">
+        <!-- 左 -->
+        <view class="content_left">
+          <navigator url="">
+            <image src="{{item.goods_small_logo}}" mode="widthFix" />
+          </navigator>
+        </view>
+        <!-- 右 -->
+        <view class="good_info">
+          <!-- 上 -->
+          <view class="good_title">{{item.goods_name}}</view>
+          <!-- 下 -->
+          <view class="good_wrap">
+            <!-- 左 -->
+            <view class="good_price">￥{{item.goods_price}}</view>
+            <!-- 右 -->
+            <view class="good_num">
+              <text class="good_count">x {{item.num}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 底部菜单栏 -->
+  <view class="cal_total">
+    <!-- 中 -->
+    <view class="cart_total">
+      <view class="cart_price">
+        <view class="total">合计: ￥{{totalPrice}}</view>
+        <view class="cart_free">包含运费</view>
+      </view>
+    </view>
+    <!-- 右 -->
+    <view class="cal_btn" bindtap="orderPay">支付({{totalNum}})</view>
+  </view>
+</view>

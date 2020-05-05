@@ -1,66 +1,28 @@
-// pages/auth/auth.js
+import { login } from '../../utils/asyncwx'
+import { request } from '../../api/request'
 Page({
+  async handelGetUserInfo(e) {
+    try {
+      const { errMsg, rawData, signature, encryptedData } = e.detail
+      // 发送请求获取登录码
+      const result = await login()
+      const { code } = result
 
-  /**
-   * 页面的初始数据
-   */
-  data: {
+      const loginObj = { errMsg, rawData, signature, encryptedData, code }
 
-  },
+      // 发送请求获取授权信息
+      const res = await request({ url: '/users/wxlogin', data: loginObj, method: 'post' })
+      const token_key = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjIzLCJpYXQiOjE1NjQ3MzAwNzksImV4cCI6MTAwMTU2NDczMDA3OH0.YPt-XeLnjV-_1ITaXGY2FhxmCe4NvXuRnRB8OMCfnPo'
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
+      // 将token存储到本地存储中
+      wx.setStorageSync("token", token_key)
 
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+      // 获取完成后跳回上一个页面
+      wx.navigateBack({
+        delta: 1
+      })
+    } catch (error) {
+      console.log('授权' + error)
+    }
   }
 })
