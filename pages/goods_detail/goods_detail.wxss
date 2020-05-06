@@ -41,6 +41,9 @@ page {
   align-items: center;
   flex-direction: column;
 }
+.goods_detail .good_info .good_desc .good_fav .icon-shoucangxuanzhong {
+  color: orangered;
+}
 .goods_detail .good_detail .text {
   margin: 30rpx;
   color: var(--themeColor);

@@ -5,7 +5,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-    goodList:[]
+    goodList:[],
+    // 当前商品是否被选中
+    isCollect:true
   },
 
   queryInfo:{
@@ -18,8 +20,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.queryInfo.goods_id = options.goods_id*1
-    
+    this.queryInfo.goods_id = options.goods_id
+  },
+
+  onShow(){
     this.getGoodsDetail()
   },
 
@@ -27,13 +31,21 @@ Page({
     const result = await request({url: '/goods/detail', data:this.queryInfo})
     this.goodsObj = result
     
+
+    // 加载缓存中的商品收藏的数据
+    const collectList = wx.getStorageSync("collectList") || []
+
+    // 判断缓存中是否有该商品
+    let isCollect = collectList.some(item => item.goods_id === this.goodsObj.goods_id)
+    
     this.setData({
       goodList:{
         goods_name:result.goods_name,
         goods_price:result.goods_price,
         pics:result.pics,
         goods_introduce:result.goods_introduce
-      }
+      },
+      isCollect
     })
   },
 
@@ -76,5 +88,43 @@ Page({
       mask: true
     })
     
+  },
+
+  // 商品收藏
+  handelCollect(){
+    let isCollect = false;
+
+    // 1 判断该商品是否存在于缓存数组中
+    const collect = wx.getStorageSync("collectList") || [];
+    
+    const index = collect.findIndex(item => item.goods_id === this.goodsObj.goods_id)
+    
+    // 2 已经存在 把该商品删除
+    if(index !== -1){
+      collect.splice(index, 1)
+      isCollect = false
+      wx.showToast({
+        title: '商品取消收藏',
+        icon: 'sucess',
+        mask: true
+      })
+    }else{
+      // 3 没有存在 把商品添加到收藏数组中 存入到缓存中即可
+      collect.push(this.goodsObj)
+      isCollect = true
+      wx.showToast({
+        title: '商品收藏成功',
+        icon: 'sucess',
+        mask: true
+      })
+    }
+
+    // 4. 将值存入缓存中
+    wx.setStorageSync("collectList", collect)
+
+    // 5. 修改data的属性
+    this.setData({
+      isCollect
+    })
   }
 })

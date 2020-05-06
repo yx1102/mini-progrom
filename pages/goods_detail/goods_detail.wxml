@@ -12,8 +12,8 @@
     <view class="good_price">￥{{goodList.goods_price}}</view>
     <view class="good_desc">
       <view class="good_title">{{goodList.goods_name}}</view>
-      <view class="good_fav">
-        <text class="iconfont icon-shoucang"></text>
+      <view class="good_fav" bindtap="handelCollect">
+        <text class="iconfont {{isCollect ? 'icon-shoucangxuanzhong':'icon-shoucang'}}"></text>
         <text>收藏</text>
       </view>
     </view>

@@ -4,7 +4,7 @@
     "Tabs": "/components/content/Tabs/Tabs",
     "Goods": "/components/content/Goods/Goods"
   },
-  "navigationBarTitleText": "商品详情",
+  "navigationBarTitleText": "商品列表",
   "enablePullDownRefresh": true,
   "backgroundTextStyle": "dark"
 

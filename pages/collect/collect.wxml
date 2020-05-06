@@ -1,2 +1,29 @@
-<!--pages/collect/collect.wxml-->
-<text>pages/collect/collect.wxml</text>
+<view class="collect">
+    <!-- tabs栏 -->
+  <Tabs tabs="{{tabs}}" bindhandelItemTap="handelItemTap">
+    <view class="desc">
+      <text class="all">全部</text>
+      <text>正在热卖</text>
+      <text>即将上线</text>
+    </view>
+    <view class="good_item">
+      <navigator class="good_content" wx:for="{{collectList}}" wx:key="goods_small_logo" url="/pages/goods_detail/goods_detail?goods_id={{item.goods_id}}">
+        <!-- 左 -->
+        <view class="content_left">
+          <navigator url="">
+            <image src="{{item.goods_small_logo}}" mode="widthFix" />
+          </navigator>
+        </view>
+        <!-- 右 -->
+        <view class="good_info">
+          <!-- 上 -->
+          <view class="good_title">{{item.goods_name}}</view>
+          <!-- 下 -->
+          <view class="good_wrap">
+            <view class="good_price">￥{{item.goods_price}}</view>
+          </view>
+        </view>
+      </navigator>
+    </view>
+  </Tabs>
+</view>
