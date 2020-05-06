@@ -1,2 +1,79 @@
-<!--pages/user/user.wxml-->
-<text>pages/user/user.wxml</text>
+<view class="user">
+  <!-- 用户头像 -->
+  <view class="userAvatar">
+    <view class="userImg">
+      <image src="{{userInfo.avatarUrl}}" />
+    </view>
+    <view class="info" wx:if="{{userInfo.avatarUrl}}">
+      <image class="avatar" src="{{userInfo.avatarUrl}}" />
+      <view class="username">{{userInfo.nickName}}</view>
+    </view>
+    <navigator class="login_btn" v-else url="/pages/login/login" class="login_btn" wx:else>
+      登录
+    </navigator>
+  </view>
+  <!-- 历史订单 -->
+  <view class="user_content">
+    <view class="user_main">
+       <!-- 浏览历史 -->
+    <view class="history">
+      <view class="history_item">
+        <view class="history_num">0</view>
+        <view class="history_name">收藏的店铺</view>
+      </view>
+      <view class="history_item">
+        <view class="history_num">0</view>
+        <view class="history_name">收藏的商品</view>
+      </view>
+      <view class="history_item">
+        <view class="history_num">0</view>
+        <view class="history_name">关注的店铺</view>
+      </view>
+      <view class="history_item">
+        <view class="history_num">0</view>
+        <view class="history_name">我的足迹</view>
+      </view>
+    </view>
+    <!-- 订单 -->
+    <view class="order_wrap">
+      <view class="order_title">我的订单</view>
+      <view class="order_item_wrap">
+        <navigator class="order_item" url="/pages/order/order?type=1">
+          <text class="iconfont icon-quanbudingdan"></text>
+          <text>全部订单</text>
+        </navigator>
+        <navigator class="order_item" url="/pages/order/order?type=2">
+          <text class="iconfont icon-31daifukuan"></text>
+          <text>代付款</text>
+        </navigator>
+        <navigator class="order_item" url="/pages/order/order?type=3">
+          <text class="iconfont icon-31daishouhuo"></text>
+          <text>待收货</text>
+        </navigator>
+        <navigator class="order_item" url="/pages/order/order?type=4">
+          <text class="iconfont icon-servicewuyoutuihuanhuo"></text>
+          <text>退货/退款</text>
+        </navigator>
+      </view>
+    </view>
+
+    <!-- 收货地址管理 -->
+    <view class="receive_add">收货地址管理</view>
+
+    <!-- 意见 -->
+    <view class="suggest_wrap">
+      <view class="suggest_item">
+        <view class="contact">
+          <text>联系客服</text>
+          <text>020-8888-8888</text>
+        </view>
+      </view>
+      <view class="suggest_item">意见反馈</view>
+      <view class="suggest_item">关于我们</view>
+    </view>
+
+    <!-- 推荐 -->
+    <view class="commend">把应用推荐给别人</view>
+    </view>
+  </view>
+</view>

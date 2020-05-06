@@ -1,0 +1,130 @@
+page{
+  background-color: #eee;
+}
+.user{
+  height: 100%;
+  .userAvatar {
+    position: relative;
+    .userImg {
+      background-color: var(--themeColor);
+      height: 45vh;
+      overflow: hidden;
+      image {
+        height: 120%;
+        -webkit-filter: blur(5px); /* Chrome, Safari, Opera */
+        filter: blur(5px);
+      }
+    }
+    .info {
+      position: absolute;
+      top: 25%;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+      .avatar {
+        width: 150rpx;
+        height: 150rpx;
+        border-radius: 50%;
+      }
+      .username {
+        color: #fff;
+        margin-top: 20rpx;
+        font-size: 36rpx;
+      }
+    }
+    .login_btn {
+      position: fixed;
+      top: 20%;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #fff;
+      padding: 40rpx;
+      color: var(--themeColor);
+      border-radius: 10px;
+      font-size: 40rpx;
+    }
+  }
+
+  .user_content{
+    position: relative;
+    height: 100%;
+    font-size: 26rpx;
+    color: #666;
+    
+    .user_main{
+      position: absolute;
+      width: 90%;
+      top: -50rpx;
+      left: 5%;
+      padding-bottom: 30rpx;
+      
+      .history{
+        display: flex;
+        background-color: #fff;
+        text-align: center;
+        height: 90rpx;
+        box-sizing: border-box;
+        padding: 10rpx;
+        .history_item{
+          flex: 1;
+          .history_num{
+            color: var(--themeColor);
+            padding-bottom: 10rpx;
+          }
+        }
+      }
+  
+      .order_wrap{
+        margin-top: 40rpx;
+        background-color: #fff;
+        .order_title{
+          padding: 20rpx;
+          border-bottom: 1px solid #ccc;
+        }
+        .order_item_wrap{
+          display: flex;
+          margin-top: 20rpx;
+          text-align: center;
+          .order_item{
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            .iconfont{
+              font-size: 40rpx;
+              margin-bottom: 15rpx;
+              color: var(--themeColor);
+            }
+          }
+  
+        }
+      }
+
+      .receive_add{
+        background-color: #fff;
+        padding: 20rpx;
+        margin-top: 20rpx;
+      }
+
+      .suggest_wrap{
+        margin-top: 20rpx;
+        background-color: #fff;
+
+        .suggest_item{
+          padding: 20rpx;
+          border-bottom: 1px solid #ccc;
+          .contact{
+            display: flex;
+            justify-content: space-between;
+          }
+        }
+      }
+
+      .commend{
+        margin-top: 20rpx;
+        background-color: #fff;
+        padding: 20rpx;
+      }
+    }
+  }
+  
+}

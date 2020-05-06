@@ -90,9 +90,23 @@
 					"scene": null
 				},
 				{
-					"id": -1,
-					"name": "订单",
+					"id": 4,
+					"name": "订单查询",
 					"pathName": "pages/order/order",
+					"query": "type=1",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "登录",
+					"pathName": "pages/login/login",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "我的",
+					"pathName": "pages/user/user",
 					"query": "",
 					"scene": null
 				}

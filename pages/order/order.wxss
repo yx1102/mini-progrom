@@ -1,1 +1,32 @@
-/* pages/order/order.wxss */
+.order .order_wrap {
+  margin-top: 20rpx;
+  padding: 0 20rpx;
+  color: #666;
+}
+.order .order_wrap .order_item {
+  font-size: 28rpx;
+  padding: 20rpx 0;
+  border-bottom: 1px solid #ccc;
+}
+.order .order_wrap .order_item .order_num {
+  display: flex;
+  justify-content: space-between;
+  padding: 5rpx 0;
+}
+.order .order_wrap .order_item .order_price {
+  display: flex;
+  justify-content: space-between;
+  padding: 5rpx 0;
+}
+.order .order_wrap .order_item .order_price .text_price {
+  color: var(--themeColor);
+  font-size: 36rpx;
+}
+.order .order_wrap .order_item .order_date {
+  display: flex;
+  justify-content: space-between;
+  padding: 5rpx 0;
+}
+.order .order_wrap .order_item .order_date .text_date {
+  color: #333;
+}
