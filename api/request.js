@@ -10,10 +10,18 @@ export const request = function (params) {
  
     ajaxTimes ++
 
+    let header = {...params.header}
+    if(params.url.includes('/my/')){
+      // 携带token请求头
+      header["Authorization"] = wx.getStorageSync("token")
+    }
+
     const baseUrl = 'https://api-hmugo-web.itheima.net/api/public/v1'
     wx.request({
       // 将属性从params中结构出来
       ...params,
+      // 请求头参数
+      header:header,
       // 共同的基础路径，后续不需写请求的服务器地址
       url: baseUrl + params.url,
       // 错误的回调
