@@ -1,66 +1,50 @@
-// pages/search/search.js
+import {request} from '../../api/request'
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    query:'',
+    searchList:[]
+  },
+  timer: -1,
 
+  async getSearchList(){
+    const {query} = this.data
+    const result = await request({url:'/goods/qsearch', data:{query}})
+    this.setData({
+      searchList: result
+    })
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
+  // 获取输入框内的值
+  inputTyping(e){
+    const query = e.detail.value
+    if(!query.trim()){
+      this.setData({
+        query: '',
+        searchList: []
+      })
+      return
+    }
+    this.setData({
+      query
+    })
 
+    
+    clearTimeout(this.timer)
+    this.timer = setTimeout(() => {
+      this.getSearchList()
+    }, 1000)
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  // 重置页面
+  removeSearchList(){
+    this.setData({
+      query: '',
+      searchList: []
+    })
   }
+
 })
