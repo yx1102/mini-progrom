@@ -1,0 +1,60 @@
+Page {
+  background-color: #eee;
+}
+.feedback {
+  color: #666;
+  .problem {
+    margin-top: 20rpx;
+    font-size: 28rpx;
+    .problem_item {
+      margin-top: 20rpx;
+      padding: 10rpx;
+      .problem_item_wrap {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 10rpx;
+        text {
+          background-color: #fff;
+          margin: 10rpx;
+          padding: 10rpx;
+          width: 25%;
+          text-align: center;
+        }
+      }
+    }
+    .problem_text {
+      margin: 20rpx;
+      border: 1px solid #ccc;
+      background-color: #fff;
+      border-radius: 10rpx;
+      padding: 10rpx; 
+
+      .fb_tool{
+        display: flex;
+        flex-wrap: wrap;
+        button {
+          border: 1px solid #ccc;
+          width: 80rpx;
+          height: 80rpx;
+          margin: 20rpx 0;
+          padding: 0;
+          color: #ccc;
+          font-size: 50rpx;
+        }
+        .upload{
+          margin: 20rpx;
+        }
+      }
+    }
+    .problem_submit {
+      margin-top: 20rpx;
+      display: flex;
+      justify-content: flex-end;
+      margin-right: 10rpx;
+      button {
+        margin: 0;
+        width: 30%;
+      }
+    }
+  }
+}

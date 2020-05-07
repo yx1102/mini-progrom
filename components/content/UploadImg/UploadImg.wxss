@@ -1,0 +1,12 @@
+.uploadImg {
+  position: relative;
+}
+.uploadImg image {
+  width: 80rpx;
+  height: 80rpx;
+}
+.uploadImg icon {
+  position: absolute;
+  top: -20rpx;
+  left: 45rpx;
+}

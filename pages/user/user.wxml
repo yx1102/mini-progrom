@@ -63,12 +63,12 @@
     <!-- 意见 -->
     <view class="suggest_wrap">
       <view class="suggest_item">
-        <view class="contact">
+        <view class="contact" >
           <text>联系客服</text>
           <text>020-8888-8888</text>
         </view>
       </view>
-      <view class="suggest_item">意见反馈</view>
+      <navigator class="suggest_item" url="/pages/feedback/feedback">意见反馈</navigator>
       <view class="suggest_item">关于我们</view>
     </view>
 

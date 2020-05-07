@@ -1,1 +1,59 @@
-/* pages/feedback/feedback.wxss */
+Page {
+  background-color: #eee;
+}
+.feedback {
+  color: #666;
+}
+.feedback .problem {
+  margin-top: 20rpx;
+  font-size: 28rpx;
+}
+.feedback .problem .problem_item {
+  margin-top: 20rpx;
+  padding: 10rpx;
+}
+.feedback .problem .problem_item .problem_item_wrap {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10rpx;
+}
+.feedback .problem .problem_item .problem_item_wrap text {
+  background-color: #fff;
+  margin: 10rpx;
+  padding: 10rpx;
+  width: 25%;
+  text-align: center;
+}
+.feedback .problem .problem_text {
+  margin: 20rpx;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  border-radius: 10rpx;
+  padding: 10rpx;
+}
+.feedback .problem .problem_text .fb_tool {
+  display: flex;
+  flex-wrap: wrap;
+}
+.feedback .problem .problem_text .fb_tool button {
+  border: 1px solid #ccc;
+  width: 80rpx;
+  height: 80rpx;
+  margin: 20rpx 0;
+  padding: 0;
+  color: #ccc;
+  font-size: 50rpx;
+}
+.feedback .problem .problem_text .fb_tool .upload {
+  margin: 20rpx;
+}
+.feedback .problem .problem_submit {
+  margin-top: 20rpx;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 10rpx;
+}
+.feedback .problem .problem_submit button {
+  margin: 0;
+  width: 30%;
+}
