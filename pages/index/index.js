@@ -6,10 +6,11 @@ Page({
   data: {
     swiperData: [],
     navData: [],
-    floorData: []
+    floorData: [],
+    queryArr:[]
   },
   //options(Object)
-  onLoad: function(options){
+  onShow: function(options){
     this.getSwiperData()
     this.getNavData()
     this.getFloorData()
@@ -34,10 +35,26 @@ Page({
   // 请求楼层数据
   async getFloorData(){
     const result = await getRequest(reqHomeFloor)
-    console.log(result);
+    result.forEach(item => {
+      let smallArr = []
+      let bigArr = []
+      item.product_list.forEach(v => {
+        const index = v.navigator_url.indexOf('?')
+        let queryStr = v.navigator_url.slice(index)
+        smallArr.push(queryStr)
+      })
+      console.log(smallArr);
+      
+      this.setData({
+        queryArr:smallArr
+      })
+      
+    })
     
     this.setData({
       floorData: result
     })
+    console.log(this.data.queryArr);
+    
   }
 });

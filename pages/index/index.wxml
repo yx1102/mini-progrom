@@ -9,7 +9,7 @@
   <!-- 导航开始 -->
   <view class="nav">
     <view class="nav_img" wx:for="{{navData}}" wx:key="name">
-      <navigator url="{{item.navigator_url}}" open-type='switchTab'>
+      <navigator url="/pages/category/category" open-type='switchTab'>
         <image src="{{item.image_src}}" mode="widthFix" />
       </navigator>
     </view>
@@ -24,7 +24,7 @@
       </view>
       <!-- 内容 -->
       <view class="floor_list">
-        <navigator wx:for="{{item1.product_list}}" wx:for-item="item2" wx:for-index="index2" wx:key="name" url="{{item2.navigator_url}}">
+        <navigator wx:for="{{item1.product_list}}" wx:for-item="item2" wx:for-index="index2" wx:key="name" url="/pages/goods_list/goods_list{{queryArr[index2]}}">
           <image mode="{{index2===0?'widthFix':'scaleToFill'}}" src="{{item2.image_src}}"></image>
         </navigator>
       </view>

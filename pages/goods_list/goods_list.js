@@ -41,8 +41,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.queryInfo.cid = options.cid
-    
+    this.queryInfo.cid = options.cid || ""
+    this.queryInfo.query = options.query || ""
+
     this.getSearchGoodsList()
   },
 
